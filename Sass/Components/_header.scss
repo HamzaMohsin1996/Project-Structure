@@ -1,0 +1,44 @@
+@import "../variables"; // Import your custom variables if needed
+/* Header styles */
+.header {
+  @include between-element;
+  @include spacing-same(10px);
+  .logo {
+    @include font-size(24px);
+    @include font-weight(bold);
+  }
+  .nav {
+    ul {
+      @include list-none;
+      @include flex-only;
+      li {
+        @include margin-left(10px);
+        &:first-child {
+          @include margin-left(0);
+        }
+        a {
+          color: $black-clr;
+         @include text-dec-none;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .header {
+    @include flex-col;
+    @include flex-align-start;
+    .nav {
+      @include margin-top(10px);
+      ul {
+        @include flex-col;
+        li {
+          @include margin-left(0);
+          @include margin-bottom(5px); 
+        }
+      }
+    }
+  }
+}
