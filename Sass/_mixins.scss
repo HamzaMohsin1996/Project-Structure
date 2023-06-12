@@ -1,0 +1,91 @@
+// Example of a mixin for centering an element horizontally and vertically
+@mixin flex-only{
+  display: flex;
+}
+@mixin flex-col{
+  flex-direction: column;
+}
+@mixin flex-align-start{
+  align-items: flex-start;
+}
+@mixin center-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+@mixin between-element{
+  @include center-element();
+  justify-content: space-between;
+}
+@mixin around-element{
+  @include center-element();
+  justify-content: space-around;
+}
+  
+  // Mixin for creating a gradient background
+  @mixin gradient-background($start-color, $end-color) {
+    background: linear-gradient($start-color, $end-color);
+  }
+  
+  // Mixin for applying a box-shadow
+  @mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+  }
+  
+
+  // Mixin for applying a spacing
+  @mixin spacing-same($equal-space) {
+    padding: $equal-space;
+  }
+  @mixin spacing-all-diff($top,$left,$right,$bottom) {
+    padding: $top,$left,$right,$bottom;
+  }
+  @mixin spacing-left($left) {
+    padding-left: $left;
+  }
+  @mixin spacing-right($right) {
+    padding-left: $right;
+  }
+  @mixin spacing-top($top) {
+    padding-top: $top;
+  }
+  @mixin spacing-bottom($bottom) {
+    padding-bottom: $bottom;
+  }
+  @mixin margin-same($equal-space) {
+    margin: $equal-space;
+  }
+  @mixin margin-all-diff($top,$left,$right,$bottom) {
+    margin: $top,$left,$right,$bottom;
+  }
+  @mixin margin-left($left) {
+    margin-left: $left;
+  }
+  @mixin margin-right($right) {
+    margin-left: $right;
+  }
+  @mixin margin-top($top) {
+    margin-left: $top;
+  }
+  @mixin margin-left($left) {
+    margin-left: $left;
+  }
+  @mixin margin-bottom($bottom) {
+    margin-left: $bottom;
+  }
+
+// Fonts Mixins
+@mixin font-size($font-size){
+  font-size: $font-size;
+}
+// Fonts Weight Mixins
+@mixin font-weight($font-weight){
+  font-weight: $font-weight;
+}
+@mixin list-none(){
+  list-style: none;
+}
+// Text decoration  Mixin 
+@mixin text-dec-none{
+  text-decoration: none;
+}
