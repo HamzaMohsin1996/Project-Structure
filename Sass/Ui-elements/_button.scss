@@ -1,0 +1,29 @@
+.custom-primary-btn{
+    @include background-color($primry-clr);
+    @include  spacing-all-diff(10px,15px,10px,15px);
+    @include  font-size(18px);
+    @include  border-none;
+    @include  border-radius(4px);
+    @include font-weight(500);
+    @include position(relative);
+    transition: .3s ease;
+    span{
+        @include gradient-color-text;
+    }
+    &:hover{
+        @include background-color(transparent);
+        @include border(1px, solid, $border-hover-clr);
+    }
+}
+.custom-btn-round{
+    @include width(40px);
+    @include height(40px);
+    @include  border-radius(4px);
+    @include background-color($primry-clr);
+    @include  spacing-same(8px);
+    @include  border-none;
+    &:hover{
+        @include background-color(transparent);
+        @include border(1px, solid, $border-hover-clr);
+    }
+}
