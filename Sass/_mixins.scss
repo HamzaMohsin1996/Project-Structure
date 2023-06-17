@@ -2,8 +2,14 @@
 @mixin flex-only{
   display: flex;
 }
+@mixin inline-block{
+  display: inline-block;
+}
 @mixin flex-col{
   flex-direction: column;
+}
+@mixin items-start{
+  align-items: flex-start;
 }
 @mixin flex-align-start{
   align-items: flex-start;
@@ -21,7 +27,12 @@
   @include center-element();
   justify-content: space-around;
 }
-  
+@mixin flex-flow{
+  flex-flow: column wrap;
+}
+@mixin display($display){
+  display: $display;
+}
   // Mixin for creating a gradient background
   @mixin gradient-background($start-color, $end-color) {
     background: linear-gradient($start-color, $end-color);
@@ -37,8 +48,11 @@
   @mixin spacing-same($equal-space) {
     padding: $equal-space;
   }
+  @mixin spacing-both-side($spacex,$spacey){
+    padding: $spacex $spacey;
+  }
   @mixin spacing-all-diff($top,$left,$right,$bottom) {
-    padding: $top,$left,$right,$bottom;
+    padding: $top $left $right $bottom;
   }
   @mixin spacing-left($left) {
     padding-left: $left;
@@ -56,7 +70,7 @@
     margin: $equal-space;
   }
   @mixin margin-all-diff($top,$left,$right,$bottom) {
-    margin: $top,$left,$right,$bottom;
+    margin: $top $left $right $bottom;
   }
   @mixin margin-left($left) {
     margin-left: $left;
@@ -73,6 +87,9 @@
   @mixin margin-bottom($bottom) {
     margin-left: $bottom;
   }
+  @mixin margin-top-bottom($top,$y-axis,$bottom){
+    margin: $top $y-axis $bottom;
+  }
 
 // Fonts Mixins
 @mixin font-size($font-size){
@@ -88,4 +105,100 @@
 // Text decoration  Mixin 
 @mixin text-dec-none{
   text-decoration: none;
+}
+// Border  Mixin 
+@mixin border-none{
+  border: 1px solid transparent;
+}
+// Border Radius  Mixin 
+@mixin border-radius($radius){
+  border-radius: $radius;
+}
+// Border Radius  Mixin 
+@mixin color($color){
+  color: $color;
+}
+// Text Color Gradient
+@mixin gradient-color-text(){
+  background: $gradient-clr;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+// Background color gradient
+@mixin background-color($bgColor){
+  background:$bgColor;
+}
+
+// Width and height Mixin
+@mixin width($width){
+  width: $width;
+}
+@mixin height($height){
+  height: $height;
+}
+
+@mixin position($position){
+  position: $position;
+}
+@mixin position-fixed{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+@mixin border($size,$type,$color){
+  border:  $size $type $color;
+}
+@mixin border-bottom($size,$type,$color){
+  border-bottom:  $size $type $color;
+
+}
+
+@mixin box-shadow($top,$spread,$blur-radius,$color){
+  box-shadow:$top $spread $blur-radius $color;
+}
+
+@mixin breakpoint($size) {
+  @if $size == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+  
+  @if $size == tablet {
+    @media (min-width: 768px) and (max-width: 1023px) {
+      @content;
+    }
+  }
+  
+  @if $size == desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+@mixin display-none{
+  display: none;
+}
+@mixin border-radius-different($top,$bottom,$top-right,$bottom-right){
+  border-radius: $top $top-right $bottom  $bottom-right;
+}
+@mixin transform-origin($x-axis,$y-axis){
+  transform-origin: $x-axis $y-axis;
+}
+@mixin transform-both-axis($y-value,$deg-val){
+  transform: translateY($y-value) rotate($deg-val);
+}
+@mixin transform-scale($scale-val){
+  transform: scale($scale-val);
+}
+@mixin transition ($seconds){
+  transition: $seconds;
+}
+@mixin text-transform($value){
+  text-transform: $value;
+}
+@mixin z-index($value){
+  z-index: $value;
 }
