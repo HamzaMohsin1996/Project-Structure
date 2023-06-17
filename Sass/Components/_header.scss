@@ -52,7 +52,7 @@
         a {
           @include color($dark-blue);
          @include text-dec-none;
-         text-transform: capitalize;
+         @include text-transform(capitalize);
          @include spacing-both-side(0, 25px);
          @include font-weight(500);
          @include breakpoint(tablet){
@@ -63,6 +63,16 @@
               @include flex-only;
             }
         
+        }
+      }
+    }
+  }
+  &.active{
+    .nav{
+      &.navmenu-mobile{
+       
+        @include breakpoint(mobile){
+          @include display(flex);
         }
       }
     }

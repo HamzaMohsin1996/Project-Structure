@@ -27,7 +27,12 @@
   @include center-element();
   justify-content: space-around;
 }
-  
+@mixin flex-flow{
+  flex-flow: column wrap;
+}
+@mixin display($display){
+  display: $display;
+}
   // Mixin for creating a gradient background
   @mixin gradient-background($start-color, $end-color) {
     background: linear-gradient($start-color, $end-color);
@@ -81,6 +86,9 @@
   }
   @mixin margin-bottom($bottom) {
     margin-left: $bottom;
+  }
+  @mixin margin-top-bottom($top,$y-axis,$bottom){
+    margin: $top $y-axis $bottom;
   }
 
 // Fonts Mixins
@@ -172,4 +180,25 @@
 
 @mixin display-none{
   display: none;
+}
+@mixin border-radius-different($top,$bottom,$top-right,$bottom-right){
+  border-radius: $top $top-right $bottom  $bottom-right;
+}
+@mixin transform-origin($x-axis,$y-axis){
+  transform-origin: $x-axis $y-axis;
+}
+@mixin transform-both-axis($y-value,$deg-val){
+  transform: translateY($y-value) rotate($deg-val);
+}
+@mixin transform-scale($scale-val){
+  transform: scale($scale-val);
+}
+@mixin transition ($seconds){
+  transition: $seconds;
+}
+@mixin text-transform($value){
+  text-transform: $value;
+}
+@mixin z-index($value){
+  z-index: $value;
 }
